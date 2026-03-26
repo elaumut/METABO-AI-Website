@@ -10,9 +10,8 @@ export default function Hero({ t }: HeroProps) {
   return (
     <section
       style={{
-        padding: "120px 20px 60px",
+        padding: "100px 20px 40px",
         background: "linear-gradient(180deg, #FAFBFC 0%, #F1F4F8 100%)",
-        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
       }}
@@ -22,7 +21,7 @@ export default function Hero({ t }: HeroProps) {
           maxWidth: 1100,
           margin: "0 auto",
           display: "grid",
-          gap: 60,
+          gap: 40,
           alignItems: "center",
         }}
         className="grid-cols-1 md:grid-cols-2"

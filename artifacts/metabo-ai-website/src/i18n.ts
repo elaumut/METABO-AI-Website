@@ -83,6 +83,8 @@ export const translations = {
       cta: "Essayer METABO+",
       freeLabel: "Gratuit",
       premiumLabel: "METABO+",
+      seeAll: "Voir toutes les fonctionnalités",
+      seeLess: "Réduire",
       comparison: [
         { feature: "Score de récupération quotidien", free: true, premium: true },
         { feature: "Analyse du sommeil", free: true, premium: true },
@@ -186,6 +188,8 @@ export const translations = {
       cta: "Try METABO+",
       freeLabel: "Free",
       premiumLabel: "METABO+",
+      seeAll: "See all features",
+      seeLess: "Show less",
       comparison: [
         { feature: "Daily recovery score", free: true, premium: true },
         { feature: "Sleep analysis", free: true, premium: true },

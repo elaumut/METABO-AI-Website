@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Translations } from "../i18n";
 
 const APP_STORE_URL = "https://apps.apple.com/fr/app/metabo-ai/id6758163705";
+const VISIBLE_ROWS = 4;
 
 interface PremiumProps {
   t: Translations["premium"];
@@ -9,12 +10,13 @@ interface PremiumProps {
 
 export default function Premium({ t }: PremiumProps) {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+  const [showAll, setShowAll] = useState(false);
 
   return (
     <section
       id="premium"
       style={{
-        padding: "100px 20px",
+        padding: "72px 20px",
         background: "#fff",
       }}
     >
@@ -94,8 +96,8 @@ export default function Premium({ t }: PremiumProps) {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: 20,
-            marginBottom: 60,
+            gap: 16,
+            marginBottom: 40,
           }}
           className="md:grid-cols-2"
         >
@@ -103,8 +105,8 @@ export default function Premium({ t }: PremiumProps) {
           <div
             style={{
               border: "1px solid rgba(0,0,0,0.06)",
-              borderRadius: 24,
-              padding: "32px",
+              borderRadius: 20,
+              padding: "24px",
               background: "#FAFBFC",
               display: "flex",
               flexDirection: "column",
@@ -165,8 +167,8 @@ export default function Premium({ t }: PremiumProps) {
           <div
             style={{
               border: "2px solid #5B7C99",
-              borderRadius: 24,
-              padding: "32px",
+              borderRadius: 20,
+              padding: "24px",
               background: "#fff",
               position: "relative",
               boxShadow: "0 12px 32px -12px rgba(91,124,153,0.2)",
@@ -277,15 +279,15 @@ export default function Premium({ t }: PremiumProps) {
             </div>
           </div>
 
-          {t.comparison.map((row, i) => (
+          {(showAll ? t.comparison : t.comparison.slice(0, VISIBLE_ROWS)).map((row, i) => (
             <div
               key={i}
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 80px 80px",
-                padding: "14px 20px",
-                borderBottom: i < t.comparison.length - 1 ? "1px solid rgba(0,0,0,0.04)" : "none",
-                background: i % 2 === 0 ? "#fff" : "#FAFBFC",
+                gridTemplateColumns: "1fr 72px 72px",
+                padding: "11px 16px",
+                borderBottom: "1px solid rgba(0,0,0,0.04)",
+                background: "#fff",
                 alignItems: "center",
               }}
             >
@@ -300,6 +302,41 @@ export default function Premium({ t }: PremiumProps) {
               </div>
             </div>
           ))}
+
+          {t.comparison.length > VISIBLE_ROWS && (
+            <button
+              onClick={() => setShowAll((s) => !s)}
+              style={{
+                width: "100%",
+                padding: "12px 16px",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                fontSize: 13,
+                fontWeight: 600,
+                color: "#5B7C99",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 6,
+              }}
+            >
+              {showAll ? t.seeLess : t.seeAll}
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ transform: showAll ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </section>

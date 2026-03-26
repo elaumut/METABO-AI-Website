@@ -15,7 +15,7 @@ export default function Footer({ t }: FooterProps) {
       style={{
         background: "hsl(215 25% 10%)",
         padding: "60px 20px 40px",
-        color: "rgba(255,255,255,0.5)",
+        color: "rgba(255,255,255,0.65)",
       }}
     >
       <div
@@ -51,7 +51,7 @@ export default function Footer({ t }: FooterProps) {
             <p
               style={{
                 fontSize: 14,
-                color: "rgba(255,255,255,0.4)",
+                color: "rgba(255,255,255,0.6)",
                 maxWidth: 240,
                 lineHeight: 1.6,
               }}
@@ -75,7 +75,7 @@ export default function Footer({ t }: FooterProps) {
                 href={`mailto:${t.contact}`}
                 style={{
                   fontSize: 14,
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(255,255,255,0.65)",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
@@ -93,7 +93,7 @@ export default function Footer({ t }: FooterProps) {
                 rel="noopener noreferrer"
                 style={{
                   fontSize: 14,
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(255,255,255,0.65)",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
@@ -107,7 +107,7 @@ export default function Footer({ t }: FooterProps) {
                 rel="noopener noreferrer"
                 style={{
                   fontSize: 14,
-                  color: "rgba(255,255,255,0.5)",
+                  color: "rgba(255,255,255,0.65)",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
@@ -130,10 +130,10 @@ export default function Footer({ t }: FooterProps) {
           }}
           className="sm:flex-row sm:justify-between sm:items-center"
         >
-          <span style={{ fontSize: 13 }}>
+          <span style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>
             &copy; {year} METABO AI. {t.rights}
           </span>
-          <span style={{ fontSize: 13 }}>metabo-ai.com</span>
+          <span style={{ fontSize: 13, color: "rgba(255,255,255,0.4)" }}>metabo-ai.com</span>
         </div>
       </div>
     </footer>

@@ -109,16 +109,20 @@ export default function Navbar({ t, lang, toggleLang }: NavbarProps) {
           <div style={{ display: "flex", alignItems: "center", gap: 16, zIndex: 60 }}>
             <button
               onClick={toggleLang}
+              aria-label="Changer de langue"
               style={{
-                fontSize: 12,
-                fontWeight: 600,
-                color: "hsl(215 25% 40%)",
                 background: "transparent",
                 border: "none",
                 cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: 3,
+                padding: "4px 2px",
               }}
             >
-              {lang === "fr" ? "EN" : "FR"}
+              <span style={{ fontSize: 12, fontWeight: lang === "fr" ? 700 : 500, color: lang === "fr" ? "#5B7C99" : "hsl(215 15% 60%)", letterSpacing: "0.02em" }}>FR</span>
+              <span style={{ fontSize: 11, color: "hsl(215 15% 70%)", lineHeight: 1 }}>/</span>
+              <span style={{ fontSize: 12, fontWeight: lang === "en" ? 700 : 500, color: lang === "en" ? "#5B7C99" : "hsl(215 15% 60%)", letterSpacing: "0.02em" }}>EN</span>
             </button>
 
             <a

@@ -9,14 +9,14 @@ export default function HowItWorks({ t }: HowItWorksProps) {
     <section
       id="how-it-works"
       style={{
-        padding: "100px 20px",
+        padding: "72px 20px",
         background: "#FAFBFC",
         borderTop: "1px solid rgba(0,0,0,0.03)",
         borderBottom: "1px solid rgba(0,0,0,0.03)",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 80 }}>
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2
             style={{
               fontSize: "clamp(28px, 4vw, 40px)",
@@ -43,8 +43,8 @@ export default function HowItWorks({ t }: HowItWorksProps) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 40,
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: 24,
           }}
         >
           {t.steps.map((step, i) => (
@@ -59,25 +59,27 @@ export default function HowItWorks({ t }: HowItWorksProps) {
               }}
               className="md:items-center md:text-center"
             >
-              {/* Giant number */}
+              {/* Step number badge */}
               <div
                 style={{
-                  fontSize: "120px",
+                  width: 36,
+                  height: 36,
+                  borderRadius: "50%",
+                  background: "rgba(91,124,153,0.1)",
+                  color: "#5B7C99",
+                  fontSize: 15,
                   fontWeight: 700,
-                  color: "rgba(91,124,153,0.06)",
-                  lineHeight: 0.8,
-                  position: "absolute",
-                  top: -20,
-                  left: 0,
-                  zIndex: 0,
-                  letterSpacing: "-0.05em",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 16,
+                  flexShrink: 0,
                 }}
-                className="md:left-1/2 md:-translate-x-1/2"
               >
                 {step.num}
               </div>
 
-              <div style={{ position: "relative", zIndex: 1, paddingTop: 40 }}>
+              <div style={{ position: "relative", zIndex: 1 }}>
                 <h3
                   style={{
                     fontSize: 20,
