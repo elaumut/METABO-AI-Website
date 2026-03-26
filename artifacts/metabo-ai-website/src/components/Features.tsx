@@ -41,7 +41,7 @@ export default function Features({ t }: FeaturesProps) {
             style={{
               fontSize: 16,
               color: "hsl(215 15% 45%)",
-              maxWidth: 400,
+              maxWidth: 440,
               margin: "0 auto",
             }}
           >
@@ -52,8 +52,9 @@ export default function Features({ t }: FeaturesProps) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 24,
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: 28,
+            alignItems: "start",
           }}
         >
           {items.map((item, i) => (
@@ -61,19 +62,20 @@ export default function Features({ t }: FeaturesProps) {
               key={i}
               style={{
                 background: "#FAFBFC",
-                border: "1px solid rgba(0,0,0,0.05)",
-                borderRadius: 20,
+                border: "1px solid rgba(91,124,153,0.1)",
+                borderRadius: 24,
                 overflow: "hidden",
                 transition: "box-shadow 0.3s ease, transform 0.3s ease",
               }}
               className="hover:shadow-lg hover:-translate-y-1"
             >
-              {/* Screenshot */}
+              {/* Screenshot — full natural height, no crop */}
               <div
                 style={{
-                  height: 240,
-                  overflow: "hidden",
-                  position: "relative",
+                  background: "#F0F4F8",
+                  padding: "24px 24px 0",
+                  display: "flex",
+                  justifyContent: "center",
                 }}
               >
                 <img
@@ -81,10 +83,10 @@ export default function Features({ t }: FeaturesProps) {
                   alt={altTexts[i]}
                   style={{
                     width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center 18%",
+                    maxWidth: 260,
+                    height: "auto",
                     display: "block",
+                    borderRadius: "12px 12px 0 0",
                   }}
                 />
               </div>
@@ -106,7 +108,8 @@ export default function Features({ t }: FeaturesProps) {
                   style={{
                     fontSize: 15,
                     color: "hsl(215 15% 45%)",
-                    lineHeight: 1.6,
+                    lineHeight: 1.65,
+                    margin: 0,
                   }}
                 >
                   {item.desc}
