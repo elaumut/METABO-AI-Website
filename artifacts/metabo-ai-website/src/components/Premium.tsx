@@ -205,7 +205,7 @@ export default function Premium({ t }: PremiumProps) {
               </span>
             </div>
             <div style={{ fontSize: 14, color: "hsl(215 15% 50%)", marginBottom: 32 }}>
-              {billing === "annual" ? t.perYear : t.perMonth}
+              {billing === "annual" ? t.billedAnnually : t.billedMonthly}
             </div>
             <a
               href={APP_STORE_URL}
