@@ -29,7 +29,7 @@ export default function Navbar({ t, lang, toggleLang }: NavbarProps) {
     { label: t.features, href: "#features" },
     { label: t.howItWorks, href: "#how-it-works" },
     { label: t.premium, href: "#premium" },
-    { label: t.privacy, href: "#privacy" },
+    { label: t.privacy, href: "/privacy" },
   ];
 
   return (
@@ -60,7 +60,7 @@ export default function Navbar({ t, lang, toggleLang }: NavbarProps) {
         >
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             style={{
               fontWeight: 700,
               fontSize: 16,

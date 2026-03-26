@@ -1,8 +1,5 @@
 import type { Translations } from "../i18n";
 
-const PRIVACY_URL = "https://elaumut.github.io/metabo-ai/privacy.html";
-const TERMS_URL = "https://elaumut.github.io/metabo-ai/privacy.html";
-
 interface FooterProps {
   t: Translations["footer"];
 }
@@ -37,17 +34,20 @@ export default function Footer({ t }: FooterProps) {
         >
           {/* Brand */}
           <div>
-            <div
+            <a
+              href="/"
               style={{
+                display: "block",
                 fontWeight: 700,
                 fontSize: 16,
                 color: "#fff",
                 letterSpacing: "-0.02em",
                 marginBottom: 12,
+                textDecoration: "none",
               }}
             >
               METABO AI
-            </div>
+            </a>
             <p
               style={{
                 fontSize: 14,
@@ -69,48 +69,42 @@ export default function Footer({ t }: FooterProps) {
             }}
             className="sm:flex-row sm:gap-16"
           >
+            {/* Contact */}
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{t.contactLabel}</span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                {t.contactLabel}
+              </span>
               <a
                 href={`mailto:${t.contact}`}
-                style={{
-                  fontSize: 14,
-                  color: "rgba(255,255,255,0.65)",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
+                style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", textDecoration: "none", transition: "color 0.2s" }}
                 className="hover:text-white"
               >
                 {t.contact}
               </a>
+              <a
+                href="/support"
+                style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", textDecoration: "none", transition: "color 0.2s" }}
+                className="hover:text-white"
+              >
+                {t.support}
+              </a>
             </div>
 
+            {/* Legal */}
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{t.legal}</span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                {t.legal}
+              </span>
               <a
-                href={PRIVACY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontSize: 14,
-                  color: "rgba(255,255,255,0.65)",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
+                href="/privacy"
+                style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", textDecoration: "none", transition: "color 0.2s" }}
                 className="hover:text-white"
               >
                 {t.privacy}
               </a>
               <a
-                href={TERMS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontSize: 14,
-                  color: "rgba(255,255,255,0.65)",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
+                href="/terms"
+                style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", textDecoration: "none", transition: "color 0.2s" }}
                 className="hover:text-white"
               >
                 {t.terms}

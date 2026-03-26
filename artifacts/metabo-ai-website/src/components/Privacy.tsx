@@ -1,7 +1,5 @@
 import type { Translations } from "../i18n";
 
-const PRIVACY_URL = "https://elaumut.github.io/metabo-ai/privacy.html";
-
 interface PrivacyProps {
   t: Translations["privacy"];
 }
@@ -88,9 +86,7 @@ export default function Privacy({ t }: PrivacyProps) {
           {t.body}
         </p>
         <a
-          href={PRIVACY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/privacy"
           style={{
             display: "inline-block",
             fontSize: 15,
