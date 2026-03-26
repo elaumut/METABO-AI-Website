@@ -22,7 +22,7 @@ export default function App() {
     <div className="min-h-screen" style={{ background: "#FAFBFC" }}>
       <Navbar t={t.nav} lang={lang} toggleLang={toggleLang} />
       <main>
-        <Hero t={t.hero} />
+        <Hero t={t.hero} lang={lang} />
         <Features t={t.features} />
         <HowItWorks t={t.howItWorks} />
         <Premium t={t.premium} />
