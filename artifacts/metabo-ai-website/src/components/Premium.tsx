@@ -14,25 +14,25 @@ export default function Premium({ t }: PremiumProps) {
     <section
       id="premium"
       style={{
-        padding: "96px 24px",
+        padding: "100px 20px",
         background: "#fff",
       }}
     >
       <div style={{ maxWidth: 880, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
+        <div style={{ textAlign: "center", marginBottom: 40 }}>
           <h2
             style={{
-              fontSize: "clamp(26px, 4vw, 42px)",
-              fontWeight: 300,
+              fontSize: "clamp(28px, 4vw, 40px)",
+              fontWeight: 600,
               letterSpacing: "-0.02em",
-              color: "hsl(215 25% 18%)",
-              marginBottom: 12,
+              color: "hsl(215 25% 15%)",
+              marginBottom: 16,
             }}
           >
             {t.title}
           </h2>
-          <p style={{ fontSize: 16, color: "hsl(215 15% 50%)" }}>
+          <p style={{ fontSize: 16, color: "hsl(215 15% 45%)" }}>
             {t.subtitle}
           </p>
         </div>
@@ -43,10 +43,8 @@ export default function Premium({ t }: PremiumProps) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 0,
-            marginBottom: 48,
-            background: "hsl(210 18% 94%)",
-            borderRadius: 10,
+            background: "hsl(210 18% 96%)",
+            borderRadius: 12,
             padding: 4,
             width: "fit-content",
             margin: "0 auto 48px",
@@ -59,14 +57,14 @@ export default function Premium({ t }: PremiumProps) {
               style={{
                 fontSize: 14,
                 fontWeight: 600,
-                padding: "8px 20px",
-                borderRadius: 7,
+                padding: "10px 24px",
+                borderRadius: 8,
                 border: "none",
                 cursor: "pointer",
-                transition: "background 0.15s, color 0.15s",
+                transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
                 background: billing === b ? "#fff" : "transparent",
-                color: billing === b ? "hsl(215 25% 18%)" : "hsl(215 15% 50%)",
-                boxShadow: billing === b ? "0 1px 4px rgba(0,0,0,0.08)" : "none",
+                color: billing === b ? "hsl(215 25% 15%)" : "hsl(215 15% 45%)",
+                boxShadow: billing === b ? "0 2px 8px rgba(0,0,0,0.05)" : "none",
                 display: "flex",
                 alignItems: "center",
                 gap: 8,
@@ -77,10 +75,10 @@ export default function Premium({ t }: PremiumProps) {
                 <span
                   style={{
                     fontSize: 11,
-                    fontWeight: 600,
-                    background: "rgba(91,124,153,0.15)",
+                    fontWeight: 700,
+                    background: "rgba(91,124,153,0.12)",
                     color: "#5B7C99",
-                    padding: "2px 7px",
+                    padding: "2px 8px",
                     borderRadius: 100,
                   }}
                 >
@@ -95,25 +93,27 @@ export default function Premium({ t }: PremiumProps) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "1fr",
             gap: 20,
-            marginBottom: 48,
+            marginBottom: 60,
           }}
-          className="price-grid"
+          className="md:grid-cols-2"
         >
-          {/* Free */}
+          {/* Free Card */}
           <div
             style={{
-              border: "1px solid hsl(210 15% 88%)",
-              borderRadius: 16,
-              padding: "32px 28px",
+              border: "1px solid rgba(0,0,0,0.06)",
+              borderRadius: 24,
+              padding: "32px",
               background: "#FAFBFC",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <div
               style={{
                 fontSize: 13,
-                fontWeight: 600,
+                fontWeight: 700,
                 color: "hsl(215 15% 50%)",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
@@ -124,22 +124,17 @@ export default function Premium({ t }: PremiumProps) {
             </div>
             <div
               style={{
-                fontSize: 36,
+                fontSize: 48,
                 fontWeight: 300,
-                color: "hsl(215 25% 18%)",
+                color: "hsl(215 25% 15%)",
                 letterSpacing: "-0.03em",
-                marginBottom: 4,
+                marginBottom: 8,
+                lineHeight: 1,
               }}
             >
               €0
             </div>
-            <div
-              style={{
-                fontSize: 13,
-                color: "hsl(215 15% 55%)",
-                marginBottom: 28,
-              }}
-            >
+            <div style={{ fontSize: 14, color: "hsl(215 15% 50%)", marginBottom: 32 }}>
               &nbsp;
             </div>
             <a
@@ -149,28 +144,34 @@ export default function Premium({ t }: PremiumProps) {
               style={{
                 display: "block",
                 textAlign: "center",
-                padding: "12px 0",
-                borderRadius: 8,
-                border: "1px solid hsl(210 15% 85%)",
-                color: "hsl(215 25% 30%)",
-                fontSize: 14,
+                padding: "16px",
+                borderRadius: 12,
+                border: "1.5px solid rgba(0,0,0,0.1)",
+                color: "hsl(215 25% 25%)",
+                fontSize: 15,
                 fontWeight: 600,
                 textDecoration: "none",
                 background: "#fff",
+                marginTop: "auto",
+                transition: "background 0.2s",
               }}
+              className="hover:bg-slate-50"
             >
-              Download
+              {t.freeLabel}
             </a>
           </div>
 
-          {/* Premium */}
+          {/* Premium Card */}
           <div
             style={{
-              border: "1.5px solid #5B7C99",
-              borderRadius: 16,
-              padding: "32px 28px",
-              background: "rgba(91,124,153,0.04)",
+              border: "2px solid #5B7C99",
+              borderRadius: 24,
+              padding: "32px",
+              background: "#fff",
               position: "relative",
+              boxShadow: "0 12px 32px -12px rgba(91,124,153,0.2)",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <div
@@ -187,23 +188,24 @@ export default function Premium({ t }: PremiumProps) {
             </div>
             <div
               style={{
-                fontSize: 36,
+                fontSize: 48,
                 fontWeight: 300,
-                color: "hsl(215 25% 18%)",
+                color: "hsl(215 25% 15%)",
                 letterSpacing: "-0.03em",
-                marginBottom: 4,
+                marginBottom: 8,
+                lineHeight: 1,
+                display: "flex",
+                alignItems: "baseline",
+                gap: 4,
               }}
             >
               {billing === "monthly" ? t.monthlyPrice : t.annualPrice}
+              <span style={{ fontSize: 16, color: "hsl(215 15% 50%)", fontWeight: 400, letterSpacing: "0" }}>
+                {billing === "monthly" ? t.perMonth : t.perYear}
+              </span>
             </div>
-            <div
-              style={{
-                fontSize: 13,
-                color: "hsl(215 15% 55%)",
-                marginBottom: 28,
-              }}
-            >
-              {billing === "monthly" ? t.perMonth : t.perYear}
+            <div style={{ fontSize: 14, color: "hsl(215 15% 50%)", marginBottom: 32 }}>
+              {billing === "annual" ? t.perYear : t.perMonth}
             </div>
             <a
               href={APP_STORE_URL}
@@ -212,14 +214,17 @@ export default function Premium({ t }: PremiumProps) {
               style={{
                 display: "block",
                 textAlign: "center",
-                padding: "12px 0",
-                borderRadius: 8,
+                padding: "16px",
+                borderRadius: 12,
                 background: "#5B7C99",
                 color: "#fff",
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 600,
                 textDecoration: "none",
+                marginTop: "auto",
+                transition: "opacity 0.2s",
               }}
+              className="hover:opacity-90"
             >
               {t.cta}
             </a>
@@ -229,28 +234,29 @@ export default function Premium({ t }: PremiumProps) {
         {/* Comparison table */}
         <div
           style={{
-            border: "1px solid hsl(210 15% 88%)",
-            borderRadius: 14,
+            border: "1px solid rgba(0,0,0,0.06)",
+            borderRadius: 20,
             overflow: "hidden",
+            background: "#fff",
           }}
         >
           {/* Table header */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 100px 100px",
-              background: "hsl(210 18% 96%)",
-              padding: "12px 24px",
-              borderBottom: "1px solid hsl(210 15% 88%)",
+              gridTemplateColumns: "1fr 80px 80px",
+              background: "#FAFBFC",
+              padding: "16px 20px",
+              borderBottom: "1px solid rgba(0,0,0,0.06)",
             }}
-          >
+            >
             <div />
             <div
               style={{
                 textAlign: "center",
                 fontSize: 12,
                 fontWeight: 600,
-                color: "hsl(215 15% 50%)",
+                color: "hsl(215 15% 45%)",
                 letterSpacing: "0.05em",
                 textTransform: "uppercase",
               }}
@@ -276,23 +282,20 @@ export default function Premium({ t }: PremiumProps) {
               key={i}
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 100px 100px",
-                padding: "14px 24px",
-                borderBottom:
-                  i < t.comparison.length - 1
-                    ? "1px solid hsl(210 15% 91%)"
-                    : "none",
-                background: i % 2 === 0 ? "#fff" : "hsl(210 20% 99%)",
+                gridTemplateColumns: "1fr 80px 80px",
+                padding: "14px 20px",
+                borderBottom: i < t.comparison.length - 1 ? "1px solid rgba(0,0,0,0.04)" : "none",
+                background: i % 2 === 0 ? "#fff" : "#FAFBFC",
                 alignItems: "center",
               }}
             >
-              <span style={{ fontSize: 14, color: "hsl(215 25% 28%)" }}>
+              <span style={{ fontSize: 14, color: "hsl(215 25% 20%)", fontWeight: 500 }}>
                 {row.feature}
               </span>
-              <div style={{ textAlign: "center" }}>
+              <div style={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
                 {row.free ? <CheckIcon /> : <DashIcon />}
               </div>
-              <div style={{ textAlign: "center" }}>
+              <div style={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
                 {row.premium ? <CheckIcon premium /> : <DashIcon />}
               </div>
             </div>
@@ -306,18 +309,17 @@ export default function Premium({ t }: PremiumProps) {
 function CheckIcon({ premium }: { premium?: boolean }) {
   return (
     <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       aria-label="Yes"
-      style={{ display: "inline-block" }}
     >
-      <circle cx="8" cy="8" r="8" fill={premium ? "#5B7C99" : "hsl(210 15% 85%)"} />
+      <circle cx="10" cy="10" r="10" fill={premium ? "#5B7C99" : "hsl(210 15% 85%)"} />
       <path
-        d="M5 8l2 2 4-4"
+        d="M6 10l2.5 2.5 5-5"
         stroke="#fff"
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -328,17 +330,16 @@ function CheckIcon({ premium }: { premium?: boolean }) {
 function DashIcon() {
   return (
     <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       aria-label="No"
-      style={{ display: "inline-block" }}
     >
       <path
-        d="M5 8h6"
-        stroke="hsl(210 15% 78%)"
-        strokeWidth="1.5"
+        d="M6 10h8"
+        stroke="hsl(210 15% 75%)"
+        strokeWidth="2"
         strokeLinecap="round"
       />
     </svg>

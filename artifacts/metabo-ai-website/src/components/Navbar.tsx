@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Translations } from "../i18n";
 import type { Lang } from "../i18n";
 
@@ -13,6 +13,18 @@ interface NavbarProps {
 export default function Navbar({ t, lang, toggleLang }: NavbarProps) {
   const [open, setOpen] = useState(false);
 
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const navLinks = [
     { label: t.features, href: "#features" },
     { label: t.howItWorks, href: "#how-it-works" },
@@ -21,219 +33,234 @@ export default function Navbar({ t, lang, toggleLang }: NavbarProps) {
   ];
 
   return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
-        background: "rgba(250,251,252,0.92)",
-        backdropFilter: "blur(12px)",
-        borderBottom: "1px solid hsl(210 15% 88%)",
-      }}
-    >
-      <nav
+    <>
+      <header
         style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-          padding: "0 24px",
-          height: 64,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          background: "rgba(250,251,252,0.85)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderBottom: "1px solid rgba(0,0,0,0.05)",
         }}
       >
-        {/* Logo */}
-        <a
-          href="#"
+        <nav
           style={{
-            fontWeight: 700,
-            fontSize: 18,
-            color: "#5B7C99",
-            textDecoration: "none",
-            letterSpacing: "-0.02em",
-            flexShrink: 0,
-          }}
-        >
-          METABO AI
-        </a>
-
-        {/* Desktop links */}
-        <div
-          style={{
+            maxWidth: 1100,
+            margin: "0 auto",
+            padding: "0 20px",
+            height: 60,
             display: "flex",
             alignItems: "center",
-            gap: 32,
+            justifyContent: "space-between",
           }}
-          className="hidden md:flex"
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              style={{
-                fontSize: 14,
-                color: "hsl(215 25% 40%)",
-                textDecoration: "none",
-                fontWeight: 500,
-                transition: "color 0.15s",
-              }}
-              onMouseEnter={(e) =>
-                ((e.target as HTMLAnchorElement).style.color = "#5B7C99")
-              }
-              onMouseLeave={(e) =>
-                ((e.target as HTMLAnchorElement).style.color =
-                  "hsl(215 25% 40%)")
-              }
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-
-        {/* Right: lang toggle + CTA */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <button
-            onClick={toggleLang}
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: "hsl(215 25% 40%)",
-              background: "none",
-              border: "1px solid hsl(210 15% 85%)",
-              borderRadius: 6,
-              padding: "4px 10px",
-              cursor: "pointer",
-              letterSpacing: "0.03em",
-            }}
-          >
-            {lang === "fr" ? "EN" : "FR"}
-          </button>
-
+          {/* Logo */}
           <a
-            href={APP_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
             style={{
-              display: "inline-block",
-              background: "#5B7C99",
-              color: "#fff",
-              fontSize: 13,
-              fontWeight: 600,
-              padding: "8px 18px",
-              borderRadius: 8,
+              fontWeight: 700,
+              fontSize: 16,
+              color: "#5B7C99",
               textDecoration: "none",
-              whiteSpace: "nowrap",
+              letterSpacing: "-0.02em",
+              zIndex: 60,
             }}
-            className="hidden sm:inline-block"
           >
-            {t.download}
+            METABO AI
           </a>
 
-          {/* Hamburger */}
-          <button
-            onClick={() => setOpen((o) => !o)}
+          {/* Desktop links */}
+          <div
+            className="hidden md:flex"
             style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: 4,
-              display: "flex",
-              flexDirection: "column",
-              gap: 5,
+              alignItems: "center",
+              gap: 32,
             }}
-            className="md:hidden"
-            aria-label="Menu"
           >
-            <span
-              style={{
-                display: "block",
-                width: 22,
-                height: 2,
-                background: "hsl(215 25% 30%)",
-                borderRadius: 2,
-                transition: "transform 0.2s",
-                transform: open ? "rotate(45deg) translate(5px, 5px)" : "none",
-              }}
-            />
-            <span
-              style={{
-                display: "block",
-                width: 22,
-                height: 2,
-                background: "hsl(215 25% 30%)",
-                borderRadius: 2,
-                opacity: open ? 0 : 1,
-                transition: "opacity 0.2s",
-              }}
-            />
-            <span
-              style={{
-                display: "block",
-                width: 22,
-                height: 2,
-                background: "hsl(215 25% 30%)",
-                borderRadius: 2,
-                transition: "transform 0.2s",
-                transform: open
-                  ? "rotate(-45deg) translate(5px, -5px)"
-                  : "none",
-              }}
-            />
-          </button>
-        </div>
-      </nav>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                style={{
+                  fontSize: 14,
+                  color: "hsl(215 25% 35%)",
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) =>
+                  ((e.target as HTMLAnchorElement).style.color = "#5B7C99")
+                }
+                onMouseLeave={(e) =>
+                  ((e.target as HTMLAnchorElement).style.color =
+                    "hsl(215 25% 35%)")
+                }
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <div
-          style={{
-            background: "#FAFBFC",
-            borderTop: "1px solid hsl(210 15% 88%)",
-            padding: "16px 24px 20px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 12,
-          }}
-          className="md:hidden"
-        >
+          {/* Right: lang toggle + CTA */}
+          <div style={{ display: "flex", alignItems: "center", gap: 16, zIndex: 60 }}>
+            <button
+              onClick={toggleLang}
+              style={{
+                fontSize: 12,
+                fontWeight: 600,
+                color: "hsl(215 25% 40%)",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              {lang === "fr" ? "EN" : "FR"}
+            </button>
+
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: "#5B7C99",
+                color: "#fff",
+                fontSize: 13,
+                fontWeight: 600,
+                padding: "8px 16px",
+                borderRadius: 20,
+                textDecoration: "none",
+              }}
+              className="hidden md:inline-block"
+            >
+              {t.download}
+            </a>
+
+            {/* Hamburger */}
+            <button
+              onClick={() => setOpen((o) => !o)}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                width: 24,
+                height: 24,
+                flexDirection: "column",
+                justifyContent: "center",
+                gap: 5,
+                position: "relative",
+                padding: 0,
+              }}
+              className="flex md:hidden"
+              aria-label="Menu"
+            >
+              <span
+                style={{
+                  display: "block",
+                  width: 20,
+                  height: 2,
+                  background: "hsl(215 25% 20%)",
+                  borderRadius: 2,
+                  transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                  transform: open ? "translateY(7px) rotate(45deg)" : "none",
+                }}
+              />
+              <span
+                style={{
+                  display: "block",
+                  width: 20,
+                  height: 2,
+                  background: "hsl(215 25% 20%)",
+                  borderRadius: 2,
+                  opacity: open ? 0 : 1,
+                  transition: "opacity 0.2s",
+                }}
+              />
+              <span
+                style={{
+                  display: "block",
+                  width: 20,
+                  height: 2,
+                  background: "hsl(215 25% 20%)",
+                  borderRadius: 2,
+                  transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                  transform: open
+                    ? "translateY(-7px) rotate(-45deg)"
+                    : "none",
+                }}
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className="md:hidden"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: "#FAFBFC",
+          zIndex: 40,
+          display: "flex",
+          flexDirection: "column",
+          padding: "100px 24px 40px",
+          opacity: open ? 1 : 0,
+          pointerEvents: open ? "auto" : "none",
+          transition: "opacity 0.3s ease",
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column", gap: 32, flex: 1 }}>
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               style={{
-                fontSize: 16,
-                color: "hsl(215 25% 25%)",
+                fontSize: 24,
+                color: "hsl(215 25% 15%)",
                 textDecoration: "none",
                 fontWeight: 500,
-                padding: "6px 0",
+                letterSpacing: "-0.02em",
+                transform: open ? "translateY(0)" : "translateY(10px)",
+                transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                opacity: open ? 1 : 0,
               }}
             >
               {link.label}
             </a>
           ))}
-          <a
-            href={APP_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-block",
-              background: "#5B7C99",
-              color: "#fff",
-              fontSize: 15,
-              fontWeight: 600,
-              padding: "12px 24px",
-              borderRadius: 8,
-              textDecoration: "none",
-              textAlign: "center",
-              marginTop: 4,
-            }}
-          >
-            {t.download}
-          </a>
         </div>
-      )}
-    </header>
+
+        <a
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "block",
+            background: "#5B7C99",
+            color: "#fff",
+            fontSize: 16,
+            fontWeight: 600,
+            padding: "16px",
+            borderRadius: 12,
+            textDecoration: "none",
+            textAlign: "center",
+            width: "100%",
+            transform: open ? "translateY(0)" : "translateY(10px)",
+            transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+            opacity: open ? 1 : 0,
+          }}
+        >
+          {t.download}
+        </a>
+      </div>
+    </>
   );
 }

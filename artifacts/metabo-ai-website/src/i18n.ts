@@ -18,7 +18,8 @@ export const translations = {
       tagline: "Tes données de santé, enfin lisibles.",
       sub: "METABO AI transforme les chiffres bruts d'Apple Santé en un tableau de bord clair — pour que tu comprennes ton corps d'un seul coup d'œil, chaque matin.",
       cta: "Télécharger sur l'App Store",
-      badge: "Disponible sur iOS",
+      secondaryCta: "Voir comment ça marche",
+      badge: "Disponible sur iPhone",
     },
     features: {
       title: "Des données complexes, une lecture simple",
@@ -26,19 +27,15 @@ export const translations = {
       items: [
         {
           name: "Score de récupération",
-          desc: "Un chiffre unique et clair chaque matin, calculé à partir de ta VFC, ton sommeil et ta fréquence cardiaque au repos. Plus besoin de tout décortiquer toi-même.",
+          desc: "Un chiffre unique chaque matin — calculé depuis ta VFC, ton sommeil et ta fréquence cardiaque au repos.",
         },
         {
           name: "Analyse du sommeil",
-          desc: "Tes nuits résumées en un instant. Visualise la qualité de ton sommeil et comprends directement ce qu'il signifie pour ta journée.",
+          desc: "Tes nuits résumées en un instant. Comprends directement ce que ton sommeil signifie pour ta journée.",
         },
         {
           name: "Détection des tendances",
-          desc: "METABO AI lit l'évolution de tes données sur la durée et t'avertit quand quelque chose mérite ton attention, avant que tu ne le ressentes.",
-        },
-        {
-          name: "METABO+ Premium",
-          desc: "Historique complet, graphiques détaillés et alertes personnalisées — pour aller encore plus loin dans la compréhension de tes données.",
+          desc: "METABO AI lit l'évolution de tes données et t'avertit avant que tu ne ressentes la fatigue.",
         },
       ],
     },
@@ -47,19 +44,19 @@ export const translations = {
       subtitle: "Trois étapes pour que tes données de santé aient enfin du sens.",
       steps: [
         {
-          num: "01",
+          num: "1",
           title: "Connecte Apple Santé",
-          desc: "Autorise l'accès à tes données en quelques secondes. Aucun compte à créer, aucune saisie manuelle.",
+          desc: "En quelques secondes, aucun compte requis.",
         },
         {
-          num: "02",
+          num: "2",
           title: "METABO AI analyse",
-          desc: "Chaque matin, l'application lit, interprète et synthétise tes données de la nuit en un score facile à comprendre.",
+          desc: "L'app lit, interprète et synthétise tes données chaque matin.",
         },
         {
-          num: "03",
+          num: "3",
           title: "Tu comprends, tu décides",
-          desc: "En un coup d'œil, tu sais où tu en es. Des indications claires te guident pour la journée, sans jargon technique.",
+          desc: "Un coup d'œil suffit. Des indications claires, sans jargon.",
         },
       ],
     },
@@ -84,18 +81,19 @@ export const translations = {
         { feature: "Détection des tendances", free: false, premium: true },
         { feature: "Alertes personnalisées", free: false, premium: true },
         { feature: "Graphiques détaillés", free: false, premium: true },
-        { feature: "Analyse approfondie", free: false, premium: true },
       ],
     },
     privacy: {
       title: "Tes données restent sur ton appareil",
       subtitle: "Zéro serveur. Zéro collecte. Zéro compromis.",
-      body: "METABO AI est conçu autour d'un principe simple : tes données de santé t'appartiennent. Toutes les analyses sont effectuées localement sur ton iPhone. Aucune donnée ne quitte jamais ton appareil. Nous ne collectons, ne stockons et ne partageons rien.",
+      body: "METABO AI fonctionne entièrement en local sur ton iPhone. Aucune donnée de santé ne quitte jamais ton appareil. Nous ne collectons, ne stockons et ne partageons rien.",
       link: "Lire la politique de confidentialité",
     },
     footer: {
       tagline: "Tes données de santé, enfin faciles à lire.",
       contact: "contact@metabo-ai.com",
+      contactLabel: "Contact",
+      legal: "Légal",
       privacy: "Politique de confidentialité",
       terms: "Conditions d'utilisation",
       rights: "Tous droits réservés.",
@@ -111,9 +109,10 @@ export const translations = {
     },
     hero: {
       tagline: "Your health data, finally easy to read.",
-      sub: "METABO AI turns raw Apple Health numbers into a clear, simple dashboard — so you understand your body at a glance, every morning.",
+      sub: "METABO AI turns raw Apple Health numbers into a clear dashboard — so you understand your body at a glance, every morning.",
       cta: "Download on the App Store",
-      badge: "Available on iOS",
+      secondaryCta: "See how it works",
+      badge: "Available on iPhone",
     },
     features: {
       title: "Complex data, simple reading",
@@ -121,19 +120,15 @@ export const translations = {
       items: [
         {
           name: "Recovery Score",
-          desc: "One clear number every morning, calculated from your HRV, sleep, and resting heart rate. No need to figure it all out yourself.",
+          desc: "One clear number every morning — calculated from your HRV, sleep, and resting heart rate.",
         },
         {
           name: "Sleep Analysis",
-          desc: "Your nights summarized in an instant. See the quality of your sleep and understand directly what it means for your day.",
+          desc: "Your nights summarized in an instant. Understand directly what your sleep means for your day.",
         },
         {
           name: "Trend Detection",
-          desc: "METABO AI reads how your data evolves over time and alerts you when something deserves attention — before you feel it.",
-        },
-        {
-          name: "METABO+ Premium",
-          desc: "Full history, detailed charts, and personalized alerts — to go even further in understanding your data.",
+          desc: "METABO AI reads how your data evolves and alerts you before you feel the fatigue.",
         },
       ],
     },
@@ -142,25 +137,25 @@ export const translations = {
       subtitle: "Three steps to make your health data finally make sense.",
       steps: [
         {
-          num: "01",
+          num: "1",
           title: "Connect Apple Health",
-          desc: "Grant access to your data in seconds. No account to create, no manual entry.",
+          desc: "In seconds, no account required.",
         },
         {
-          num: "02",
+          num: "2",
           title: "METABO AI analyzes",
-          desc: "Every morning, the app reads, interprets, and synthesizes your overnight data into an easy-to-understand score.",
+          desc: "The app reads, interprets, and synthesizes your data every morning.",
         },
         {
-          num: "03",
+          num: "3",
           title: "You understand, you decide",
-          desc: "At a glance, you know where you stand. Clear guidance for your day — no technical jargon.",
+          desc: "At a glance. Clear indications, no jargon.",
         },
       ],
     },
     premium: {
       title: "METABO+",
-      subtitle: "Go further in reading and understanding your data.",
+      subtitle: "Go further in understanding your data.",
       monthly: "Monthly",
       annual: "Annual",
       annualSave: "Save 33%",
@@ -179,18 +174,19 @@ export const translations = {
         { feature: "Trend detection", free: false, premium: true },
         { feature: "Personalized alerts", free: false, premium: true },
         { feature: "Detailed charts", free: false, premium: true },
-        { feature: "In-depth analysis", free: false, premium: true },
       ],
     },
     privacy: {
       title: "Your data stays on your device",
       subtitle: "Zero servers. Zero collection. Zero compromise.",
-      body: "METABO AI is built on a simple principle: your health data belongs to you. All analysis is performed locally on your iPhone. No data ever leaves your device. We collect, store, and share nothing.",
+      body: "METABO AI works entirely locally on your iPhone. No health data ever leaves your device. We collect, store, and share nothing.",
       link: "Read the privacy policy",
     },
     footer: {
       tagline: "Your health data, finally easy to read.",
       contact: "contact@metabo-ai.com",
+      contactLabel: "Contact",
+      legal: "Legal",
       privacy: "Privacy Policy",
       terms: "Terms of Use",
       rights: "All rights reserved.",

@@ -6,43 +6,42 @@ interface FeaturesProps {
 
 const icons = [
   // Recovery Score — heart pulse
-  <svg key="0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg key="0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M3 12h2l2-8 4 16 4-10 2 2h4" />
   </svg>,
   // Sleep — moon
-  <svg key="1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg key="1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
   </svg>,
   // Trend Detection — trending up
-  <svg key="2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg key="2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
     <polyline points="17 6 23 6 23 12" />
-  </svg>,
-  // Premium — star
-  <svg key="3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-  </svg>,
+  </svg>
 ];
 
 export default function Features({ t }: FeaturesProps) {
+  // Only taking 3 items to match "3 cartes horizontales" requirement
+  const items = t.items.slice(0, 3);
+
   return (
     <section
       id="features"
       style={{
-        padding: "96px 24px",
+        padding: "100px 20px",
         background: "#fff",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
+        <div style={{ textAlign: "center", marginBottom: 60 }}>
           <h2
             style={{
-              fontSize: "clamp(26px, 4vw, 42px)",
-              fontWeight: 300,
+              fontSize: "clamp(28px, 4vw, 40px)",
+              fontWeight: 600,
               letterSpacing: "-0.02em",
-              color: "hsl(215 25% 18%)",
-              marginBottom: 12,
+              color: "hsl(215 25% 15%)",
+              marginBottom: 16,
             }}
           >
             {t.title}
@@ -50,7 +49,7 @@ export default function Features({ t }: FeaturesProps) {
           <p
             style={{
               fontSize: 16,
-              color: "hsl(215 15% 50%)",
+              color: "hsl(215 15% 45%)",
               maxWidth: 440,
               margin: "0 auto",
             }}
@@ -59,34 +58,25 @@ export default function Features({ t }: FeaturesProps) {
           </p>
         </div>
 
-        {/* Cards grid */}
+        {/* Cards */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: 24,
           }}
         >
-          {t.items.map((item, i) => (
+          {items.map((item, i) => (
             <div
               key={i}
               style={{
                 background: "#FAFBFC",
-                border: "1px solid hsl(210 15% 90%)",
-                borderRadius: 14,
-                padding: "32px 28px",
-                transition: "box-shadow 0.2s, transform 0.2s",
+                border: "1px solid rgba(0,0,0,0.04)",
+                borderRadius: 20,
+                padding: "36px 32px",
+                transition: "all 0.3s ease",
               }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 8px 32px rgba(91,124,153,0.12)";
-                (e.currentTarget as HTMLDivElement).style.transform =
-                  "translateY(-3px)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLDivElement).style.transform = "none";
-              }}
+              className="hover:shadow-lg hover:-translate-y-1 hover:bg-white"
             >
               <div
                 style={{
@@ -96,19 +86,19 @@ export default function Features({ t }: FeaturesProps) {
                   width: 48,
                   height: 48,
                   background: "rgba(91,124,153,0.1)",
-                  borderRadius: 12,
+                  borderRadius: 14,
                   color: "#5B7C99",
-                  marginBottom: 20,
+                  marginBottom: 24,
                 }}
               >
                 {icons[i]}
               </div>
               <h3
                 style={{
-                  fontSize: 17,
+                  fontSize: 18,
                   fontWeight: 600,
-                  color: "hsl(215 25% 18%)",
-                  marginBottom: 10,
+                  color: "hsl(215 25% 15%)",
+                  marginBottom: 12,
                   letterSpacing: "-0.01em",
                 }}
               >
@@ -116,9 +106,9 @@ export default function Features({ t }: FeaturesProps) {
               </h3>
               <p
                 style={{
-                  fontSize: 14,
-                  color: "hsl(215 15% 48%)",
-                  lineHeight: 1.65,
+                  fontSize: 15,
+                  color: "hsl(215 15% 45%)",
+                  lineHeight: 1.6,
                 }}
               >
                 {item.desc}

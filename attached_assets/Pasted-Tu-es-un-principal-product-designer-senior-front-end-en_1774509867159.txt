@@ -1,0 +1,257 @@
+Tu es un principal product designer + senior front-end engineer expert en landing pages premium pour apps iPhone.
+
+Ta mission :
+Transformer la landing page actuelle de METABO AI en une landing page mobile-first haut de gamme, avec un rendu digne d’un produit iOS sérieux, crédible et prêt à convertir.
+
+Contexte produit :
+METABO AI est une application iPhone de lecture intelligente des données Apple Santé.
+L’app transforme des données de santé brutes en indicateurs clairs, utiles et lisibles chaque matin.
+Elle met en avant :
+- score de récupération
+- analyse du sommeil
+- détection des tendances
+- lecture simple de l’état global
+- confidentialité maximale : tout reste sur l’appareil
+
+Positionnement de marque :
+- premium
+- sobre
+- rassurant
+- intelligent
+- lisible
+- health-tech élégante
+- jamais agressif
+- jamais cheap
+- jamais “template startup générique”
+
+Références implicites :
+Le rendu doit évoquer les standards Apple, Health, bien-être premium, SaaS mobile haut de gamme.
+Il faut une sensation de maîtrise, clarté, calme, confiance, précision.
+Pas d’effets visuels inutiles.
+Pas de surcharge.
+Pas de design criard.
+Pas de style marketing crypto/startup.
+
+Objectif business :
+Maximiser la conversion vers le téléchargement App Store.
+Objectif secondaire :
+donner immédiatement confiance dans le sérieux du produit, sa lisibilité, sa confidentialité et sa valeur premium.
+
+Audit à appliquer avant toute modification :
+Analyse d’abord la landing actuelle et identifie les points faibles visibles :
+- navbar mobile cassée
+- débordements de texte
+- densité mal maîtrisée
+- hero sans preuve visuelle suffisante
+- sections trop espacées
+- pricing trop lourd sur mobile
+- incohérences de langue
+- hiérarchie de conversion pas assez forte
+
+Ensuite seulement, refonds proprement le code existant.
+
+Priorités absolues :
+1. Mobile-first réel
+La landing doit être pensée d’abord pour iPhone.
+Le rendu mobile doit être impeccable avant desktop.
+Aucun texte ne doit casser.
+Aucun menu ne doit déborder.
+Aucune carte ne doit sembler trop grande ou maladroite.
+Le scroll doit être fluide, rythmé, premium.
+
+2. Header premium et propre
+Sur mobile :
+- logo METABO AI à gauche
+- burger menu à droite
+- menu overlay ou dropdown propre, élégant, léger
+- animation subtile
+- liens bien espacés
+- fermeture intuitive
+Sur desktop :
+- navbar horizontale propre, équilibrée, élégante
+- alignement rigoureux
+- CTA discret si utile
+Le header doit donner une impression de produit fini.
+
+3. Hero beaucoup plus fort
+La hero doit vendre le produit immédiatement.
+Au-dessus de la ligne de flottaison mobile, on doit comprendre :
+- c’est une app iPhone
+- elle lit les données Apple Santé
+- elle les rend compréhensibles
+- elle est premium
+- elle est disponible maintenant
+
+Inclure dans la hero :
+- badge “Disponible sur iPhone”
+- titre fort
+- sous-titre clair
+- CTA principal App Store
+- CTA secondaire discret
+- mockup iPhone premium très visible
+- idéalement 1 ou 2 screenshots réels ou crédibles dans le mockup
+
+Le mockup doit être élégant, réaliste, bien intégré au design, et devenir un élément central de preuve visuelle.
+
+4. Conversion App Store
+Le CTA principal doit être très propre visuellement.
+Texte recommandé :
+“Télécharger sur l’App Store”
+Le rendu doit inspirer immédiatement confiance.
+Si possible, intégrer un style de bouton premium cohérent avec les codes Apple.
+Possibilité :
+- bouton principal custom très propre
+- + badge officiel App Store plus bas dans la page si pertinent
+
+5. Preuve produit immédiate
+Ajouter une vraie section de screenshots ou mockups de l’app.
+Il faut montrer l’interface, pas seulement la décrire.
+Minimum :
+- dashboard récupération
+- sommeil
+- tendances
+Les visuels doivent être disposés avec sophistication, pas comme une simple galerie brute.
+
+6. Rythme vertical et densité
+Réduire les espaces vides excessifs.
+Conserver de l’air mais supprimer l’effet “prototype trop espacé”.
+Chaque section doit être dense juste ce qu’il faut.
+Le scroll doit paraître maîtrisé, premium, jamais interminable.
+
+7. Cohérence rédactionnelle
+Tout le site doit être 100% en français.
+Supprimer tout mot résiduel en anglais comme “Download”.
+Uniformiser les CTA, les titres et les labels.
+Ton attendu :
+- clair
+- premium
+- rassurant
+- concret
+- sans jargon inutile
+- sans promesse médicale
+- sans emphase marketing artificielle
+
+8. Section METABO+ à repenser
+La section premium doit rester claire mais devenir plus élégante et plus compacte.
+Elle doit faire monter la perception de valeur, pas ralentir le scroll.
+À conserver :
+- version Gratuit
+- version METABO+
+- différenciation claire
+À améliorer :
+- cartes plus harmonieuses
+- hiérarchie typographique plus premium
+- tableau comparatif responsive
+- densité optimisée sur mobile
+Le tableau ne doit pas paraître interminable ni cassé.
+Si nécessaire, utiliser :
+- accordéon
+- cartes comparatives
+- ou tableau repensé plus intelligent
+tant que la lisibilité mobile est meilleure.
+
+9. Section confidentialité à sublimer
+Cette section est stratégique.
+Elle doit devenir un bloc de confiance fort et mémorable.
+Conserver le message :
+“Tes données restent sur ton appareil”
+“Zéro serveur. Zéro collecte. Zéro compromis.”
+La section doit visuellement inspirer sécurité, maîtrise et confiance.
+Design possible :
+- fond contrasté premium
+- icône sobre
+- texte plus hiérarchisé
+- lien politique de confidentialité bien intégré
+
+10. Footer propre et crédible
+Minimal, net, sérieux.
+Contenu :
+- METABO AI
+- baseline courte
+- contact@metabo-ai.com
+- Politique de confidentialité
+- Conditions d’utilisation
+- copyright
+- metabo-ai.com si pertinent
+Le footer doit ressembler à celui d’un vrai produit publié, pas à celui d’un template.
+
+Structure cible attendue :
+1. Header responsive premium
+2. Hero très forte avec mockup iPhone
+3. Bloc bénéfices clés
+4. Bloc “Comment ça marche” en 3 étapes compactes
+5. Bloc screenshots / aperçu produit
+6. Bloc METABO+
+7. Bloc confidentialité
+8. Footer
+
+Contenu à utiliser et améliorer légèrement :
+Hero
+Badge : “Disponible sur iPhone”
+Titre : “Tes données de santé, enfin lisibles.”
+Sous-titre : “METABO AI transforme les chiffres bruts d’Apple Santé en un tableau de bord clair — pour que tu comprennes ton corps d’un seul coup d’œil, chaque matin.”
+CTA principal : “Télécharger sur l’App Store”
+CTA secondaire possible : “Voir comment ça marche”
+
+Bénéfices
+- Score de récupération
+- Analyse du sommeil
+- Détection des tendances
+
+Section fonctionnement
+Titre : “Simple. Automatique. Lisible.”
+Sous-titre : “Trois étapes pour que tes données de santé aient enfin du sens.”
+Étapes :
+1. Connecte Apple Santé
+2. METABO AI analyse
+3. Tu comprends, tu décides
+
+Confidentialité
+Titre : “Tes données restent sur ton appareil”
+Accroche : “Zéro serveur. Zéro collecte. Zéro compromis.”
+
+Direction visuelle :
+- palette actuelle conservée mais raffinée
+- bleu grisé premium
+- fonds très propres
+- contraste net
+- ombres douces
+- bordures fines
+- coins arrondis élégants
+- typographie moderne, premium, sobre
+- icônes cohérentes
+- éviter les effets tape-à-l’œil
+- priorité absolue à la lisibilité
+
+Contraintes techniques :
+- ne pas casser inutilement l’architecture existante
+- améliorer l’existant intelligemment
+- nettoyer le responsive
+- vérifier toutes les sections sur mobile, tablette, desktop
+- optimiser le rendu sur Safari iPhone
+- aucun overflow horizontal
+- aucune navbar cassée
+- aucun composant mal aligné
+- aucun texte orphelin ou empilé maladroitement
+- soigner les breakpoints
+- soigner les espacements
+- soigner les CTA
+- soigner la hiérarchie visuelle
+
+Exigence de qualité :
+Le résultat doit sembler conçu par une équipe produit sérieuse.
+La landing doit pouvoir être montrée à un utilisateur, un investisseur, un partenaire ou soumise à une communication publique sans impression de brouillon.
+
+Livrables attendus :
+1. Landing refondue directement dans le code
+2. Responsive réellement maîtrisé
+3. Hiérarchie de conversion renforcée
+4. Design plus premium
+5. Meilleure intégration du produit visuel
+6. Résumé final détaillé des modifications, section par section
+
+Important :
+Commence par auditer brièvement la structure actuelle.
+Puis applique les corrections dans le code.
+Ne te contente pas de micro-ajustements CSS.
+Je veux une vraie amélioration visible, en particulier sur mobile.

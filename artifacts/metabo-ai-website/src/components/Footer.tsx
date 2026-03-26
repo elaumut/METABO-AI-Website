@@ -13,9 +13,9 @@ export default function Footer({ t }: FooterProps) {
   return (
     <footer
       style={{
-        background: "hsl(215 25% 14%)",
-        padding: "48px 24px",
-        color: "rgba(255,255,255,0.6)",
+        background: "hsl(215 25% 10%)",
+        padding: "60px 20px 40px",
+        color: "rgba(255,255,255,0.5)",
       }}
     >
       <div
@@ -24,36 +24,35 @@ export default function Footer({ t }: FooterProps) {
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
-          gap: 24,
+          gap: 40,
         }}
       >
         <div
           style={{
             display: "flex",
-            flexWrap: "wrap",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
-            gap: 24,
+            flexDirection: "column",
+            gap: 32,
           }}
+          className="md:flex-row md:items-start md:justify-between"
         >
           {/* Brand */}
           <div>
             <div
               style={{
                 fontWeight: 700,
-                fontSize: 17,
+                fontSize: 16,
                 color: "#fff",
                 letterSpacing: "-0.02em",
-                marginBottom: 8,
+                marginBottom: 12,
               }}
             >
               METABO AI
             </div>
             <p
               style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.5)",
-                maxWidth: 220,
+                fontSize: 14,
+                color: "rgba(255,255,255,0.4)",
+                maxWidth: 240,
                 lineHeight: 1.6,
               }}
             >
@@ -65,87 +64,76 @@ export default function Footer({ t }: FooterProps) {
           <div
             style={{
               display: "flex",
-              flexWrap: "wrap",
-              gap: 24,
-              alignItems: "center",
+              flexDirection: "column",
+              gap: 16,
             }}
+            className="sm:flex-row sm:gap-16"
           >
-            <a
-              href={`mailto:${t.contact}`}
-              style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.55)",
-                textDecoration: "none",
-                transition: "color 0.15s",
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#fff")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(255,255,255,0.55)")
-              }
-            >
-              {t.contact}
-            </a>
-            <a
-              href={PRIVACY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.55)",
-                textDecoration: "none",
-                transition: "color 0.15s",
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#fff")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(255,255,255,0.55)")
-              }
-            >
-              {t.privacy}
-            </a>
-            <a
-              href={TERMS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.55)",
-                textDecoration: "none",
-                transition: "color 0.15s",
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#fff")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(255,255,255,0.55)")
-              }
-            >
-              {t.terms}
-            </a>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{t.contactLabel}</span>
+              <a
+                href={`mailto:${t.contact}`}
+                style={{
+                  fontSize: 14,
+                  color: "rgba(255,255,255,0.5)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                className="hover:text-white"
+              >
+                {t.contact}
+              </a>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{t.legal}</span>
+              <a
+                href={PRIVACY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: 14,
+                  color: "rgba(255,255,255,0.5)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                className="hover:text-white"
+              >
+                {t.privacy}
+              </a>
+              <a
+                href={TERMS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: 14,
+                  color: "rgba(255,255,255,0.5)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                className="hover:text-white"
+              >
+                {t.terms}
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Bottom line */}
         <div
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.08)",
-            paddingTop: 20,
+            borderTop: "1px solid rgba(255,255,255,0.1)",
+            paddingTop: 24,
             display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            gap: 8,
+            flexDirection: "column",
+            gap: 16,
           }}
+          className="sm:flex-row sm:justify-between sm:items-center"
         >
-          <span style={{ fontSize: 12 }}>
+          <span style={{ fontSize: 13 }}>
             &copy; {year} METABO AI. {t.rights}
           </span>
-          <span style={{ fontSize: 12 }}>metabo-ai.com</span>
+          <span style={{ fontSize: 13 }}>metabo-ai.com</span>
         </div>
       </div>
     </footer>
