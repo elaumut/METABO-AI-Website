@@ -4,44 +4,35 @@ interface FeaturesProps {
   t: Translations["features"];
 }
 
-const icons = [
-  // Recovery Score — heart pulse
-  <svg key="0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 12h2l2-8 4 16 4-10 2 2h4" />
-  </svg>,
-  // Sleep — moon
-  <svg key="1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-  </svg>,
-  // Trend Detection — trending up
-  <svg key="2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-    <polyline points="17 6 23 6 23 12" />
-  </svg>
+const screenshots = [
+  "feature-metaboscore.png",
+  "feature-metabocoach.png",
+  "feature-historique.png",
 ];
 
+const altTexts = ["Metaboscore", "MetaboCoach", "Analyses & Historique"];
+
 export default function Features({ t }: FeaturesProps) {
-  // Only taking 3 items to match "3 cartes horizontales" requirement
   const items = t.items.slice(0, 3);
+  const base = import.meta.env.BASE_URL;
 
   return (
     <section
       id="features"
       style={{
-        padding: "100px 20px",
+        padding: "80px 20px",
         background: "#fff",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 60 }}>
+        <div style={{ textAlign: "center", marginBottom: 52 }}>
           <h2
             style={{
-              fontSize: "clamp(28px, 4vw, 40px)",
+              fontSize: "clamp(26px, 4vw, 38px)",
               fontWeight: 600,
               letterSpacing: "-0.02em",
               color: "hsl(215 25% 15%)",
-              marginBottom: 16,
+              marginBottom: 14,
             }}
           >
             {t.title}
@@ -50,7 +41,7 @@ export default function Features({ t }: FeaturesProps) {
             style={{
               fontSize: 16,
               color: "hsl(215 15% 45%)",
-              maxWidth: 440,
+              maxWidth: 400,
               margin: "0 auto",
             }}
           >
@@ -58,7 +49,6 @@ export default function Features({ t }: FeaturesProps) {
           </p>
         </div>
 
-        {/* Cards */}
         <div
           style={{
             display: "grid",
@@ -71,48 +61,57 @@ export default function Features({ t }: FeaturesProps) {
               key={i}
               style={{
                 background: "#FAFBFC",
-                border: "1px solid rgba(0,0,0,0.04)",
+                border: "1px solid rgba(0,0,0,0.05)",
                 borderRadius: 20,
-                padding: "36px 32px",
-                transition: "all 0.3s ease",
+                overflow: "hidden",
+                transition: "box-shadow 0.3s ease, transform 0.3s ease",
               }}
-              className="hover:shadow-lg hover:-translate-y-1 hover:bg-white"
+              className="hover:shadow-lg hover:-translate-y-1"
             >
+              {/* Screenshot */}
               <div
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: 48,
-                  height: 48,
-                  background: "rgba(91,124,153,0.1)",
-                  borderRadius: 14,
-                  color: "#5B7C99",
-                  marginBottom: 24,
+                  height: 240,
+                  overflow: "hidden",
+                  position: "relative",
                 }}
               >
-                {icons[i]}
+                <img
+                  src={`${base}${screenshots[i]}`}
+                  alt={altTexts[i]}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center 18%",
+                    display: "block",
+                  }}
+                />
               </div>
-              <h3
-                style={{
-                  fontSize: 18,
-                  fontWeight: 600,
-                  color: "hsl(215 25% 15%)",
-                  marginBottom: 12,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                {item.name}
-              </h3>
-              <p
-                style={{
-                  fontSize: 15,
-                  color: "hsl(215 15% 45%)",
-                  lineHeight: 1.6,
-                }}
-              >
-                {item.desc}
-              </p>
+
+              {/* Text */}
+              <div style={{ padding: "24px 28px 28px" }}>
+                <h3
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: "hsl(215 25% 15%)",
+                    marginBottom: 10,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {item.name}
+                </h3>
+                <p
+                  style={{
+                    fontSize: 15,
+                    color: "hsl(215 15% 45%)",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

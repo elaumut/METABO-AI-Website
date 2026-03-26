@@ -22,7 +22,7 @@ export const translations = {
       badge: "Disponible sur iPhone",
       mockup: {
         today: "Aujourd'hui",
-        scoreLabel: "Score de Récupération",
+        scoreLabel: "Metaboscore",
         optimal: "Optimal",
         sleep: "Sommeil",
         hrv: "VFC",
@@ -30,20 +30,20 @@ export const translations = {
       },
     },
     features: {
-      title: "Des données complexes, une lecture simple",
-      subtitle: "METABO AI fait le travail d'interprétation à ta place.",
+      title: "Ce que METABO AI fait pour toi",
+      subtitle: "Trois outils pensés pour être lus en quelques secondes.",
       items: [
         {
-          name: "Score de récupération",
-          desc: "Un chiffre unique chaque matin — calculé depuis ta VFC, ton sommeil et ta fréquence cardiaque au repos.",
+          name: "Metaboscore",
+          desc: "Un score sur 100 chaque matin, calculé depuis ton sommeil, ta récupération cardiaque et ta charge physique. Tu comprends ton corps en un coup d'œil.",
         },
         {
-          name: "Analyse du sommeil",
-          desc: "Tes nuits résumées en un instant. Comprends directement ce que ton sommeil signifie pour ta journée.",
+          name: "MetaboCoach",
+          desc: "Des conseils adaptés à ton état physiologique du jour. Un focus clair et des actions recommandées — pour savoir exactement quoi faire.",
         },
         {
-          name: "Détection des tendances",
-          desc: "METABO AI lit l'évolution de tes données et t'avertit avant que tu ne ressentes la fatigue.",
+          name: "Analyses & Historique",
+          desc: "Comprends tes tendances dès le premier jour. METABO AI analyse jusqu'à 30 jours de données Santé existantes pour révéler immédiatement tes patterns.",
         },
       ],
     },
@@ -127,7 +127,7 @@ export const translations = {
       badge: "Available on iPhone",
       mockup: {
         today: "Today",
-        scoreLabel: "Recovery Score",
+        scoreLabel: "Metaboscore",
         optimal: "Optimal",
         sleep: "Sleep",
         hrv: "HRV",
@@ -135,20 +135,20 @@ export const translations = {
       },
     },
     features: {
-      title: "Complex data, simple reading",
-      subtitle: "METABO AI does the interpretation work for you.",
+      title: "What METABO AI does for you",
+      subtitle: "Three tools designed to be read in seconds.",
       items: [
         {
-          name: "Recovery Score",
-          desc: "One clear number every morning — calculated from your HRV, sleep, and resting heart rate.",
+          name: "Metaboscore",
+          desc: "A score out of 100 every morning, calculated from your sleep, cardiac recovery, and physical load. Understand your body at a glance.",
         },
         {
-          name: "Sleep Analysis",
-          desc: "Your nights summarized in an instant. Understand directly what your sleep means for your day.",
+          name: "MetaboCoach",
+          desc: "Advice tailored to your physiological state each day. A clear focus, recommended actions — so you know exactly what to do.",
         },
         {
-          name: "Trend Detection",
-          desc: "METABO AI reads how your data evolves and alerts you before you feel the fatigue.",
+          name: "Analyses & History",
+          desc: "Understand your trends from day one. METABO AI analyzes up to 30 days of existing Health data to immediately reveal your patterns.",
         },
       ],
     },
