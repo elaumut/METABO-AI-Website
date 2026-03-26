@@ -1,6 +1,6 @@
 import type { Translations } from "../i18n";
 
-const APP_STORE_URL = "https://apps.apple.com/app/id982107779";
+const APP_STORE_URL = "https://apps.apple.com/fr/app/metabo-ai/id6758163705";
 
 interface HeroProps {
   t: Translations["hero"];
