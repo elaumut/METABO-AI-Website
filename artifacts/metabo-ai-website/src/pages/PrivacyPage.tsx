@@ -45,9 +45,13 @@ const content = {
         body: "Cette politique peut être mise à jour pour refléter les évolutions du service ou de la réglementation. La version applicable est celle publiée sur le site à la date de consultation.",
       },
       {
-        heading: "8. Contact",
+        heading: "8. Éditeur responsable du traitement",
+        body: "ELA UMUT — 23 boulevard Charles Gautier — 44800 Saint-Herblain — France",
+      },
+      {
+        heading: "9. Contact",
         body: null,
-        contact: "contact@metabo-ai.com",
+        contact: "support@metabo-ai.com",
         contactPre: "Pour toute question relative à cette politique, vous pouvez nous contacter à : ",
       },
     ],
@@ -90,9 +94,13 @@ const content = {
         body: "This policy may be updated to reflect changes in the service or regulations. The applicable version is the one published on the site at the time of consultation.",
       },
       {
-        heading: "8. Contact",
+        heading: "8. Data controller",
+        body: "ELA UMUT — 23 boulevard Charles Gautier — 44800 Saint-Herblain — France",
+      },
+      {
+        heading: "9. Contact",
         body: null,
-        contact: "contact@metabo-ai.com",
+        contact: "support@metabo-ai.com",
         contactPre: "For any questions regarding this policy, you can reach us at: ",
       },
     ],

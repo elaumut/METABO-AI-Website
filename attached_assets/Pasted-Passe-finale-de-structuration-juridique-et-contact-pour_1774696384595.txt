@@ -1,0 +1,103 @@
+Passe finale de structuration juridique et contact pour le site METABO AI.
+
+Décision produit :
+on unifie toute la communication publique sous une seule adresse :
+support@metabo-ai.com
+
+Je ne veux plus voir contact@metabo-ai.com sur le site public.
+Si nécessaire, contact@ peut exister en alias technique, mais l’adresse affichée partout sur le site doit être :
+support@metabo-ai.com
+
+À faire maintenant :
+
+1. Uniformiser l’email sur tout le site
+Remplacer partout l’email public par :
+support@metabo-ai.com
+
+Cela inclut :
+- footer
+- page /privacy
+- page /terms
+- page /support
+- tout texte de contact éventuel
+
+2. Ajouter une vraie page :
+/legal
+Titre :
+Mentions légales
+
+Contenu à intégrer :
+Éditeur du site :
+ELA UMUT
+23 boulevard Charles Gautier
+44800 Saint-Herblain
+France
+
+Téléphone :
+07 61 80 46 31
+
+E-mail :
+support@metabo-ai.com
+
+SIRET :
+48245759500049
+
+Important :
+prévoir aussi un bloc “Hébergement” avec placeholder clair à compléter selon l’hébergeur final :
+- si déploiement sur Vercel, afficher les mentions d’hébergement Vercel
+- si déploiement sur Netlify, afficher les mentions d’hébergement Netlify
+Pour l’instant, mets une structure propre et facilement éditable pour ce bloc.
+
+3. Corriger les liens du footer
+Le footer doit maintenant contenir au minimum :
+- Support -> /support
+- Politique de confidentialité -> /privacy
+- Conditions d’utilisation -> /terms
+- Mentions légales -> /legal
+
+4. Mettre à jour la page /privacy
+Remplacer l’email de contact par :
+support@metabo-ai.com
+Ajouter la désignation de l’éditeur :
+ELA UMUT
+23 boulevard Charles Gautier
+44800 Saint-Herblain
+France
+
+5. Mettre à jour la page /terms
+Ajouter ou corriger les coordonnées avec :
+ELA UMUT
+23 boulevard Charles Gautier
+44800 Saint-Herblain
+France
+07 61 80 46 31
+support@metabo-ai.com
+SIRET : 48245759500049
+
+6. Mettre à jour la page /support
+Contenu simple, propre, utile :
+- titre Support
+- phrase courte
+- e-mail principal : support@metabo-ai.com
+- téléphone : 07 61 80 46 31
+- liens vers /privacy, /terms, /legal
+
+7. Préserver le design actuel
+Ne pas retoucher inutilement la homepage.
+Ne pas refaire la DA.
+Je veux juste une finalisation cohérente et juridiquement plus propre.
+
+8. Vérification finale
+Tester que les routes suivantes existent et fonctionnent :
+/
+ /privacy
+ /terms
+ /support
+ /legal
+
+Et vérifier que tous les liens ouvrent la bonne page.
+
+À la fin, donne-moi :
+- les fichiers créés/modifiés
+- les liens footer finaux
+- l’endroit exact où le bloc Hébergement devra être mis à jour après le choix Vercel ou Netlify

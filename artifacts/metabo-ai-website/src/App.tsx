@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import SupportPage from "./pages/SupportPage";
+import LegalPage from "./pages/LegalPage";
 
 function HomePage({ lang, toggleLang }: { lang: Lang; toggleLang: () => void }) {
   const t = translations[lang];
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/privacy" component={() => <PrivacyPage lang={lang} toggleLang={toggleLang} />} />
         <Route path="/terms" component={() => <TermsPage lang={lang} toggleLang={toggleLang} />} />
         <Route path="/support" component={() => <SupportPage lang={lang} toggleLang={toggleLang} t={t} />} />
+        <Route path="/legal" component={() => <LegalPage lang={lang} toggleLang={toggleLang} />} />
         <Route component={() => <HomePage lang={lang} toggleLang={toggleLang} />} />
       </Switch>
     </Router>

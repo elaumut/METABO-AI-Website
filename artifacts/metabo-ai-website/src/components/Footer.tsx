@@ -109,6 +109,13 @@ export default function Footer({ t }: FooterProps) {
               >
                 {t.terms}
               </a>
+              <a
+                href="/legal"
+                style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", textDecoration: "none", transition: "color 0.2s" }}
+                className="hover:text-white"
+              >
+                {t.legalNotice}
+              </a>
             </div>
           </div>
         </div>

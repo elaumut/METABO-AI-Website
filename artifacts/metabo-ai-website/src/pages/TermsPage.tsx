@@ -25,7 +25,7 @@ const content: Record<Lang, { eyebrow: string; title: string; updated: string; i
     sections: [
       {
         heading: "1. Éditeur du service",
-        body: "Éditeur : METABO AI — E-mail : contact@metabo-ai.com — Site : metabo-ai.com",
+        body: "ELA UMUT — 23 boulevard Charles Gautier — 44800 Saint-Herblain — France\nTéléphone : 07 61 80 46 31 — E-mail : support@metabo-ai.com — Site : metabo-ai.com — SIRET : 48245759500049",
       },
       {
         heading: "2. Objet du service",
@@ -93,7 +93,7 @@ const content: Record<Lang, { eyebrow: string; title: string; updated: string; i
       {
         heading: "14. Contact",
         contactPre: "Pour toute question : ",
-        contact: "contact@metabo-ai.com",
+        contact: "support@metabo-ai.com",
       },
     ],
   },
@@ -105,7 +105,7 @@ const content: Record<Lang, { eyebrow: string; title: string; updated: string; i
     sections: [
       {
         heading: "1. Publisher",
-        body: "Publisher: METABO AI — Email: contact@metabo-ai.com — Website: metabo-ai.com",
+        body: "ELA UMUT — 23 boulevard Charles Gautier — 44800 Saint-Herblain — France\nPhone: +33 7 61 80 46 31 — Email: support@metabo-ai.com — Website: metabo-ai.com — SIRET: 48245759500049",
       },
       {
         heading: "2. Purpose of the service",
@@ -173,7 +173,7 @@ const content: Record<Lang, { eyebrow: string; title: string; updated: string; i
       {
         heading: "14. Contact",
         contactPre: "For any questions: ",
-        contact: "contact@metabo-ai.com",
+        contact: "support@metabo-ai.com",
       },
     ],
   },
@@ -208,7 +208,7 @@ export default function TermsPage({ lang, toggleLang }: TermsPageProps) {
                 </h2>
               )}
               {section.body && !section.linkText && (
-                <p style={{ fontSize: 15, color: "hsl(215 15% 40%)", lineHeight: 1.75 }}>
+                <p style={{ fontSize: 15, color: "hsl(215 15% 40%)", lineHeight: 1.75, whiteSpace: "pre-line" }}>
                   {section.body}
                 </p>
               )}
