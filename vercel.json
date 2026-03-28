@@ -1,0 +1,15 @@
+{
+  "buildCommand": "pnpm --filter @workspace/metabo-ai-website run build",
+  "outputDirectory": "artifacts/metabo-ai-website/dist/public",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "env": {
+    "BASE_PATH": "/"
+  },
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
