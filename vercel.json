@@ -1,11 +1,9 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "pnpm install",
   "buildCommand": "pnpm --filter @workspace/metabo-ai-website run build",
   "outputDirectory": "artifacts/metabo-ai-website/dist/public",
-  "installCommand": "pnpm install",
-  "framework": null,
-  "env": {
-    "BASE_PATH": "/"
-  },
   "rewrites": [
     {
       "source": "/((?!.*\\.).*)",

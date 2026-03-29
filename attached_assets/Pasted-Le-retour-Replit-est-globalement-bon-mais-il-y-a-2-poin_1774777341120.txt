@@ -1,0 +1,44 @@
+Le retour Replit est globalement bon, mais il y a 2 points à verrouiller avant de pousser en production.
+Ce qui est validé :
+vercel.json doit bien être à la racine du projet Vercel, et Vercel permet bien d’y définir buildCommand, installCommand, outputDirectory et rewrites. Pour une SPA, une rewrite vers index.html est bien nécessaire pour éviter les 404 sur les routes profondes.
+Le premier vrai point de vigilance, c’est le monorepo. La phrase “laisse Root Directory vide” n’est pas universellement vraie. En monorepo, Vercel recommande en général de sélectionner le dossier de l’app comme Root Directory. Et si tu définis un Root Directory, l’app ne peut plus accéder aux fichiers en dehors de ce dossier. Donc :
+soit ton projet Vercel pointe sur la racine du repo, et alors outputDirectory: "artifacts/metabo-ai-website/dist/public" peut être cohérent ;
+soit ton projet Vercel pointe directement sur artifacts/metabo-ai-website, et dans ce cas ton outputDirectory actuel est faux, car il doit devenir quelque chose comme dist/public.
+Le deuxième point, c’est env dans vercel.json. Ce n’est pas bloquant, mais Vercel dit clairement qu’ils ne recommandent pas d’utiliser cette propriété pour les variables custom ; ils préfèrent les définir dans les Project Settings. Donc mettre BASE_PATH: "/" dans vercel.json fonctionnera probablement, mais ce n’est pas le montage le plus propre. Pour Vite, le bon levier pour le chemin public est bien l’option base.
+Sur la rewrite, ton regex est acceptable techniquement. Vercel documente aussi une version plus simple : "/(.*)" -> "/index.html". Ton approche avec exclusion des fichiers statiques est plus défensive, donc je la trouve saine. Le texte explicatif de Replit contient juste une petite coquille dans le regex écrit en phrase, mais le JSON montré est le bon.
+La version la plus propre selon ton architecture est donc :
+Cas 1 — projet Vercel lié à la racine du repo
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm --filter @workspace/metabo-ai-website run build",
+  "outputDirectory": "artifacts/metabo-ai-website/dist/public",
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+Cas 2 — projet Vercel avec Root Directory = artifacts/metabo-ai-website
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist/public",
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+Ma lecture nette :
+Oui, Replit a corrigé les bons sujets.
+Non, je ne garderais pas aveuglément “Root Directory vide” sans vérifier comment le projet Vercel est importé.
+Oui, je retirerais env.BASE_PATH du vercel.json sauf si tu en as vraiment besoin.
+Oui, le projet semble déployable si le outputDirectory correspond exactement au vrai dossier généré après build. Vercel souligne que c’est l’erreur la plus fréquente quand un projet build mais renvoie des 404.
+La meilleure action maintenant :
+vérifie dans Vercel si ton projet est branché sur la racine du repo ou sur artifacts/metabo-ai-website. C’est ce seul point qui décide quelle config finale est correcte.
