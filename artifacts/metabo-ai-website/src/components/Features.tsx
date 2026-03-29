@@ -1,20 +1,30 @@
 import type { Translations } from "../i18n";
+import type { Lang } from "../i18n";
 
 interface FeaturesProps {
   t: Translations["features"];
+  lang: Lang;
 }
 
-const screenshots = [
-  "feature-metaboscore.png",
-  "feature-metabocoach.png",
-  "feature-historique.png",
-];
+const screenshots: Record<Lang, string[]> = {
+  fr: [
+    "feature-metaboscore.png",
+    "feature-metabocoach.png",
+    "feature-historique.png",
+  ],
+  en: [
+    "feature-metaboscore-en.png",
+    "feature-metabocoach-en.png",
+    "feature-historique-en.png",
+  ],
+};
 
-const altTexts = ["Metaboscore", "MetaboCoach", "Analyses & Historique"];
+const altTexts = ["Metaboscore", "MetaboCoach", "Analyses & History"];
 
-export default function Features({ t }: FeaturesProps) {
+export default function Features({ t, lang }: FeaturesProps) {
   const items = t.items.slice(0, 3);
   const base = import.meta.env.BASE_URL;
+  const images = screenshots[lang];
 
   return (
     <section
@@ -79,7 +89,7 @@ export default function Features({ t }: FeaturesProps) {
                 }}
               >
                 <img
-                  src={`${base}${screenshots[i]}`}
+                  src={`${base}${images[i]}`}
                   alt={altTexts[i]}
                   style={{
                     width: "100%",

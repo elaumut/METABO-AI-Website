@@ -20,7 +20,7 @@ function HomePage({ lang, toggleLang }: { lang: Lang; toggleLang: () => void }) 
       <Navbar t={t.nav} lang={lang} toggleLang={toggleLang} />
       <main>
         <Hero t={t.hero} lang={lang} />
-        <Features t={t.features} />
+        <Features t={t.features} lang={lang} />
         <HowItWorks t={t.howItWorks} />
         <Premium t={t.premium} />
         <Privacy t={t.privacy} />
