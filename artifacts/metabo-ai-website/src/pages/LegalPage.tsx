@@ -1,5 +1,19 @@
+import { Helmet } from "react-helmet-async";
 import { type Lang } from "../i18n";
 import LegalLayout from "./LegalLayout";
+
+const pageMeta = {
+  fr: {
+    title: "Mentions légales — METABO AI",
+    description: "Mentions légales du site metabo-ai.com, édité par ELA UMUT, Saint-Herblain, France.",
+    canonical: "https://metabo-ai.com/legal",
+  },
+  en: {
+    title: "Legal Notice — METABO AI",
+    description: "Legal notice for metabo-ai.com, published by ELA UMUT, Saint-Herblain, France.",
+    canonical: "https://metabo-ai.com/legal",
+  },
+};
 
 interface LegalPageProps {
   lang: Lang;
@@ -95,9 +109,16 @@ const fieldStyle: React.CSSProperties = {
 
 export default function LegalPage({ lang, toggleLang }: LegalPageProps) {
   const c = content[lang];
+  const meta = pageMeta[lang];
 
   return (
-    <LegalLayout lang={lang} toggleLang={toggleLang}>
+    <>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <link rel="canonical" href={meta.canonical} />
+      </Helmet>
+      <LegalLayout lang={lang} toggleLang={toggleLang}>
       <div style={{ maxWidth: 720, margin: "0 auto", padding: "64px 24px 100px" }}>
         <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", color: "#5B7C99", textTransform: "uppercase", marginBottom: 16 }}>
           {c.eyebrow}
@@ -203,6 +224,7 @@ export default function LegalPage({ lang, toggleLang }: LegalPageProps) {
 
         </div>
       </div>
-    </LegalLayout>
+      </LegalLayout>
+    </>
   );
 }

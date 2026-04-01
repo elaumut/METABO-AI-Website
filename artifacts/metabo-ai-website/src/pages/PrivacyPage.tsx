@@ -1,5 +1,19 @@
+import { Helmet } from "react-helmet-async";
 import { type Lang } from "../i18n";
 import LegalLayout from "./LegalLayout";
+
+const pageMeta = {
+  fr: {
+    title: "Politique de confidentialité — METABO AI",
+    description: "METABO AI ne collecte aucune donnée de santé. Toutes les données Apple Santé sont traitées localement sur votre iPhone, sans serveur.",
+    canonical: "https://metabo-ai.com/privacy",
+  },
+  en: {
+    title: "Privacy Policy — METABO AI",
+    description: "METABO AI collects no health data. All Apple Health data is processed locally on your iPhone, with no server involved.",
+    canonical: "https://metabo-ai.com/privacy",
+  },
+};
 
 interface PrivacyPageProps {
   lang: Lang;
@@ -109,9 +123,16 @@ const content = {
 
 export default function PrivacyPage({ lang, toggleLang }: PrivacyPageProps) {
   const c = content[lang];
+  const meta = pageMeta[lang];
 
   return (
-    <LegalLayout lang={lang} toggleLang={toggleLang}>
+    <>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <link rel="canonical" href={meta.canonical} />
+      </Helmet>
+      <LegalLayout lang={lang} toggleLang={toggleLang}>
       <div style={{ maxWidth: 720, margin: "0 auto", padding: "64px 24px 100px" }}>
         <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", color: "#5B7C99", textTransform: "uppercase", marginBottom: 16 }}>
           {c.eyebrow}
@@ -148,6 +169,7 @@ export default function PrivacyPage({ lang, toggleLang }: PrivacyPageProps) {
           ))}
         </div>
       </div>
-    </LegalLayout>
+      </LegalLayout>
+    </>
   );
 }
