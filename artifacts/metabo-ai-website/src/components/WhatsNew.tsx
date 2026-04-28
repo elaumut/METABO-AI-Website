@@ -13,7 +13,7 @@ const screenshots: Record<Lang, string[]> = {
   ],
   en: [
     "feature-age-physiologique-en.jpg",
-    "feature-widgets.png",
+    "feature-widgets-en.png",
     "feature-partage-en.jpg",
   ],
 };
