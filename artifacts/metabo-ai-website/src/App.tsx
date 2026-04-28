@@ -5,6 +5,7 @@ import { detectLang, translations, type Lang } from "./i18n";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
+import WhatsNew from "./components/WhatsNew";
 import HowItWorks from "./components/HowItWorks";
 import Premium from "./components/Premium";
 import Privacy from "./components/Privacy";
@@ -47,6 +48,7 @@ function HomePage({ lang, toggleLang }: { lang: Lang; toggleLang: () => void }) 
         <main>
           <Hero t={t.hero} lang={lang} />
           <Features t={t.features} lang={lang} />
+          <WhatsNew t={t.whatsNew} lang={lang} />
           <HowItWorks t={t.howItWorks} />
           <Premium t={t.premium} />
           <Privacy t={t.privacy} />

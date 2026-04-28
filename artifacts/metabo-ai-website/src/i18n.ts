@@ -47,6 +47,26 @@ export const translations = {
         },
       ],
     },
+    whatsNew: {
+      title: "Nouveautés",
+      subtitle: "Trois ajouts récents pour aller plus loin avec METABO AI.",
+      items: [
+        {
+          name: "Âge physiologique",
+          tag: "METABO+",
+          desc: "Une estimation de ton âge biologique à partir des signaux Apple Santé, accompagnée d'un indicateur de fiabilité.",
+          disclaimer: "Estimation indicative — non médicale, non clinique.",
+        },
+        {
+          name: "Widgets iPhone",
+          desc: "Trois widgets pour ton écran d'accueil : score de récupération, sommeil et tendance sur 7 jours.",
+        },
+        {
+          name: "Partage de cartes",
+          desc: "Partage ta récupération du jour sous la forme d'une carte visuelle, en un geste.",
+        },
+      ],
+    },
     howItWorks: {
       title: "Simple. Automatique. Lisible.",
       subtitle: "Trois étapes pour que tes données de santé aient enfin du sens.",
@@ -91,6 +111,7 @@ export const translations = {
         { feature: "Historique 7 jours", free: true, premium: false },
         { feature: "Historique illimité", free: false, premium: true },
         { feature: "Détection des tendances", free: false, premium: true },
+        { feature: "Âge physiologique", free: false, premium: true },
         { feature: "Alertes personnalisées", free: false, premium: true },
         { feature: "Graphiques détaillés", free: false, premium: true },
       ],
@@ -154,6 +175,26 @@ export const translations = {
         },
       ],
     },
+    whatsNew: {
+      title: "What's new",
+      subtitle: "Three recent additions to go further with METABO AI.",
+      items: [
+        {
+          name: "Physiological age",
+          tag: "METABO+",
+          desc: "An estimate of your biological age from Apple Health signals, with a reliability indicator.",
+          disclaimer: "Indicative estimate — not medical, not clinical.",
+        },
+        {
+          name: "iPhone widgets",
+          desc: "Three home screen widgets: recovery score, sleep, and 7-day trend.",
+        },
+        {
+          name: "Share cards",
+          desc: "Share your daily recovery as a visual card, in a single tap.",
+        },
+      ],
+    },
     howItWorks: {
       title: "Simple. Automatic. Readable.",
       subtitle: "Three steps to make your health data finally make sense.",
@@ -198,6 +239,7 @@ export const translations = {
         { feature: "7-day history", free: true, premium: false },
         { feature: "Unlimited history", free: false, premium: true },
         { feature: "Trend detection", free: false, premium: true },
+        { feature: "Physiological age", free: false, premium: true },
         { feature: "Personalized alerts", free: false, premium: true },
         { feature: "Detailed charts", free: false, premium: true },
       ],
